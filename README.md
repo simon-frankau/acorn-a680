@@ -26,7 +26,21 @@ Photos [here](./photos)!
 
 ## Schematics
 
-TODO
+Chris's Acorns contains [some
+schematics](http://chrisacorns.computinghistory.org.uk/docs/Acorn/Manuals/Acorn_A680TRM_Drawings.zip)
+as part of the official documentation, but I managed to get another
+copy via a different route:
+
+Back when I first got the boards, I mentioned this to another CUCPS
+person, and they told me they could get me schematics, which might be
+useful if I were to play about with the boards... and they did! It
+appears they came from a different source, because they have different
+engineering metadata stuff around the edge of the schematics, which is
+kind of interesting, but I suspect the schematics from the above link
+will be better for most users.
+
+I have scanned (and reassembled the dodgy photocopying)
+[here](./schematics).
 
 ## ROMs
 
@@ -35,6 +49,8 @@ provide a byte of the 32-bit data the CPU needs. The `a680.bin` file
 interleaves the ROMs to produce the image seen by the processor. The
 ROMs contain little-endian ARM code, which I've done a little
 reversing of in Ghidra.
+
+TODO: Labels on the ROMs. Cross-checking contents.
 
 TODO: Reverse a bit more and include the basics of the analysis.
 
