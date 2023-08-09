@@ -30,4 +30,15 @@ TODO
 
 ## ROMs
 
-TODO
+The [roms](./roms) directory contains the 4 EPROM images that each
+provide a byte of the 32-bit data the CPU needs. The `a680.bin` file
+interleaves the ROMs to produce the image seen by the processor. The
+ROMs contain little-endian ARM code, which I've done a little
+reversing of in Ghidra.
+
+TODO: Reverse a bit more and include the basics of the analysis.
+
+## GALs/PALs
+
+TODO: The ROMs are not the only programmable element. Comment on the
+GALs/PALs.
