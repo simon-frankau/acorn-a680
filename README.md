@@ -56,24 +56,50 @@ The EPROMs are half-empty, having 256kB of contents in 512kB total
 EPROMs (4x128kB). They are labelled "0274,20[0-3]-C BOOT ROM [0-3] (C)
 ACORN 1988".
 
-TODO: Cross-checking contents.
+They appear to run the self-tests 1-7 as shown on the hexadecimal
+display, only doing the follow-up tests if the NVRAM has a bit set to
+run these extra tests.
 
-TODO: Reverse a bit more and include the basics of the analysis.
+I have tried to avoid reversing the whole ROM, concentrating on just
+the self-diagnostics, but from the strings involved it looks like it
+has the `OS_CLI` plus a Unix CLI with "UNIX BOOT system 0.32 (19 Jul
+1988)". It also looks like some parts of the `OS_CLI` were removed to
+make space - "Removed for UNIX version"." I have not dug further.
+
+I have exported my reversing so far as `a680.bin.gzf`, from Ghidra
+10.1.3.
+
+TODO: Cross-checking contents between EPROM sets.
 
 ## GALs/PALs
 
 TODO: The board has 16 GALs on it. I have yet to try dumping them, and
 don't know if they're protected.
 
+## Resources
+
+ * [Chris's
+   Acorns](http://chrisacorns.computinghistory.org.uk/RISCiXComputers.html#A680)
+   includes the Technical Reference Manuals, which are pretty good for
+   technical details.
+ * Data sheets for the Acorn custom ICs are available on
+   [BitSavers](http://www.bitsavers.org/pdf/acorn/).
+ * The [ARM instruction
+   set](https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf)
+   was very helpful for understanding the bits of assembly that are
+   not well-supported by Ghidra.
+ * When trying to reverse the more Acorn-y parts of the ROM,
+   [Archimedes Operating System: A Dabhand
+   Guide](https://www.pagetable.com/docs/Archimedes%20Operating%20System.pdf)
+   by the van Somerens was a helpful introduction, while the [RISC OS
+   Programmer's
+   Manuals](http://www.riscos.com/support/developers/) provided
+   detailed information.
+ * [Theo Markettos' Acorn technical
+   documents](https://www.chiark.greenend.org.uk/~theom/riscos/techdocs.html)
+   gave another view.
+
 ## Misc technical details
-
-[Chris's
-Acorns](http://chrisacorns.computinghistory.org.uk/RISCiXComputers.html#A680)
-includes the Technical Reference Manuals, which are pretty good for
-technical details.
-
-Data sheets for the Acorn custom ICs are available on
-[BitSavers](http://www.bitsavers.org/pdf/acorn/).
 
 It looks like the -5V rail is *only* used to pass through the -5V
 supply to the backplane.
