@@ -62,9 +62,22 @@ run these extra tests.
 
 I have tried to avoid reversing the whole ROM, concentrating on just
 the self-diagnostics, but from the strings involved it looks like it
-has the `OS_CLI` plus a Unix CLI with "UNIX BOOT system 0.32 (19 Jul
-1988)". It also looks like some parts of the `OS_CLI` were removed to
-make space - "Removed for UNIX version"." I have not dug further.
+has the following modules:
+
+| Name          | Help             | Version                     |
+|---------------|------------------|-----------------------------|
+| Acorn ADFS    | ADFS             | 1.02140 DEVELOPMENT VERSION |
+| Debugger      | Debugger         | 1.00 (11 Sep 1987)          |
+| FileCore      | FileCore         | 1.02117 DEVELOPMENT VERSION |
+| FileSwitch    | FileSwitch       | 1.29 (19 Jul 1988)          |
+|               | UNIX BOOT system | 0.32 (19 Jul 1988)          |
+| UNIXCLI       | UNIX boot CLI    | 0.02 (18 Jul 1988)          |
+| UtilityModule | CLI utilities    | 0.32 (19 Jul 1988)          |
+
+If you want to poke around further, you can open up the Ghidra image!
+It also looks like some parts of the `OS_CLI` were removed to make
+space - the ROM contains "Removed for UNIX version"." I have not dug
+further.
 
 I have exported my reversing so far as `a680.bin.gzf`, from Ghidra
 10.1.3.
