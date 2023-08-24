@@ -89,6 +89,18 @@ TODO: Cross-checking contents between EPROM sets.
 TODO: The board has 16 GALs on it. I have yet to try dumping them, and
 don't know if they're protected.
 
+## Booting
+
+I have managed to get one of the boards to POST. Looking at the
+schematics, it appears the -5V rail is *only* used to pass through the
+-5V supply to the backplane. As such, I managed to power the board
+from the floppy connector of an ATX power supply (5V and 12V).
+
+On initial power-up it fails the DRAM test (step 5), but once warmed
+up a little it gets as far as step E. This video shows POST process at double speed:
+
+![A680 POST](./a680-boot-2x.gif)
+
 ## Resources
 
  * [Chris's
