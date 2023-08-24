@@ -112,6 +112,10 @@ don't know if they're protected.
    documents](https://www.chiark.greenend.org.uk/~theom/riscos/techdocs.html)
    gave another view.
 
+I've copied key datasheets to the [datasheets](./datasheets)
+directory. They're pretty small and it makes this repo rather more
+self-contained.
+
 ## Misc technical details
 
 It looks like the -5V rail is *only* used to pass through the -5V
