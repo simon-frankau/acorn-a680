@@ -127,10 +127,3 @@ up a little it gets as far as step E. This video shows POST process at double sp
 I've copied key datasheets to the [datasheets](./datasheets)
 directory. They're pretty small and it makes this repo rather more
 self-contained.
-
-## Misc technical details
-
-It looks like the -5V rail is *only* used to pass through the -5V
-supply to the backplane.
-
-TODO: Board-powering options?
